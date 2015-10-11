@@ -1,4 +1,4 @@
-# Sublime text3环境
+# Sublime text3环境设置
 ### 引子
 俗话说，工欲善其事，必先利其器，其实Sublime text已经下载很久了，自学python的时候也仅仅是把他当成普通的代码编辑器，运行python的 .py文件时候仍然在终端中通过python语句执行。
 今天才发现原来可以直接在Sublime text中通过command+B（我的电脑环境：macbook pro + OSX 10.11 EL Capitan）执行。囧！！！
