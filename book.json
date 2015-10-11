@@ -1,6 +1,12 @@
 {
-    "plugins": [
-        "disqus"
-    ],
-    "pluginsConfig": {}
+    
+    "plugins": ["disqus"],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "LearnPython"
+        }
+    }  
+    
+    
+    
 }
