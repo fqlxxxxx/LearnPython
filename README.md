@@ -3,7 +3,7 @@
 
 
 # Gitbook 地址
-https://www.gitbook.com/book/fqlxxxxx/learnpython
+https://fqlxxxxx.gitbooks.io/learnpython/
 
 #更新记录
 
