@@ -41,10 +41,6 @@
 2. 执行git serve、安装disqus插件时不成功。
 
 
-
-
-
-
 ## 待解疑问
 * GitHub网页端如何 revert last commit？
 * 怎么使用 git 备份并管理代码?
