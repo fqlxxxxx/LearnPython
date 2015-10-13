@@ -157,6 +157,7 @@ npm -v
 * 还是需要安装 Xcode
 
 **第1坑**
+
 通过 npm 安装 gitbook 
 ```
 npm install gitbook -g
@@ -182,11 +183,11 @@ npm ERR! Please include the following file with any support request:
 npm ERR!     /Users/alex/npm-debug.log
 ```
 
-**原因**
-npm 默认是从国外的源获取和下载包信息，不慢才怪，有时甚至被墙，导致无法正常安装软件。
+**原因:**
+网友[Way Lau](http://www.waylau.com/faster-npm/)的一篇博客分析道:npm 默认是从国外的源获取和下载包信息，不慢才怪，有时甚至被墙，导致无法正常安装软件。
 
+**有3种方式解决:**
 
-有3种方式解决:
 可以采用国内的 npm 镜像来解决网速慢的问题, 也可以配置代理。
 
 这里以“淘宝 NPM 镜像”举例。淘宝 NPM 镜像这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步，镜像地址为 registry.npm.taobao.org， 是从 registry.npmjs.org 进行全量同步的。
@@ -213,14 +214,35 @@ npm install -g cnpm
 npm config set registry=http://registry.npm.taobao.org
 ```
 
->参考资料:[加速 npm](http://www.waylau.com/faster-npm/)
+第2坑:
 
+通过 cnpm 安装gitbook
 
-
-
+```
 cnpm install gitbook -g
+```
 
+提示没有找到 Xcode, 但是查了很多资料有的说只需要安装CommandLineTools 即可, 但也有人说从10.9开始就必须要安装 Xcode 才行, 得!!! 我还是下一个吧.
+现在从 AppStore 下载还挺快.
+```
+xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
 
+xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+```
+
+安装后 Xcode 后再执行gitbook安装命令, 没有任何报错, 安装成功.
+
+但是查询版本号的时候
+
+```
+gitbook -V
+```
+
+提示没有找到这个命令, 我晕!!!哪里姿势不对? 试了help 命令也一样的反馈.
+
+```
+-bash: gitbook: command not found
+```
 
 
 ** 一些命令brew **
