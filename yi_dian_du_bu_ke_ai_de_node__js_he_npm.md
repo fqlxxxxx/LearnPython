@@ -181,7 +181,16 @@ npm ERR! network 'proxy' config is set properly.  See: 'npm help config'
 npm ERR! Please include the following file with any support request:
 npm ERR!     /Users/alex/npm-debug.log
 ```
-有两种方式解决:
+
+**原因**
+npm 默认是从国外的源获取和下载包信息，不慢才怪，有时甚至被墙，导致无法正常安装软件。
+
+
+有3种方式解决:
+可以采用国内的 npm 镜像来解决网速慢的问题, 也可以配置代理。
+
+这里以“淘宝 NPM 镜像”举例。淘宝 NPM 镜像这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步，镜像地址为 registry.npm.taobao.org， 是从 registry.npmjs.org 进行全量同步的。
+
 1. 配置代理
 2. 安装 cnpm, cnpm 是 npm 中国镜像的 npm 客户端
 3. 切换 npm 到中国镜像 cnpm
@@ -203,6 +212,9 @@ npm install -g cnpm
 ```
 npm config set registry=http://registry.npm.taobao.org
 ```
+
+>参考资料:[加速 npm](http://www.waylau.com/faster-npm/)
+
 
 
 
