@@ -149,6 +149,8 @@ v4.1.2
 npm -v
 2.14.6
 ```
+>参考资料:[Mac 重新安裝npm](http://iambigd.blogspot.com/2014/06/npm.html)
+
 ###第2步安装 gitbook
 以为终于可以开心的安装 gitbook 了,结果遇到两个坑:
 * npm 被屏蔽
@@ -180,11 +182,31 @@ npm ERR! Please include the following file with any support request:
 npm ERR!     /Users/alex/npm-debug.log
 ```
 有两种方式解决:
-* 配置代理
-* 切换到 npm 中国镜像 cnpm
+1. 配置代理
+2. 安装 cnpm, cnpm 是 npm 中国镜像的 npm 客户端
+3. 切换 npm 到中国镜像 cnpm
 
-由于我选择的科学上网方式, 不知道具体的代理地址. 所以放弃了第一种方式, 选择切换到 cnpm, 淘宝搭建的 cnpm 应该挺靠谱的.
+####方法1
+由于我选择的科学上网方式, 不知道具体的代理网络地址, 所以放弃了第一种方式. 但可以参考这篇
+[Is there a way to make npm install (the command) to work behind proxy?](http://stackoverflow.com/questions/7559648/is-there-a-way-to-make-npm-install-the-command-to-work-behind-proxy)
 
+
+####方法2
+我采用的这种方式, cnpm 是 npm 中国镜像的 npm 客户端，可以代替 npm。
+先用 npm 安装 cnpm
+```
+npm install -g cnpm
+```
+
+####方法3
+设置国内的镜像为默认镜像源：
+```
+npm config set registry=http://registry.npm.taobao.org
+```
+
+
+
+cnpm install gitbook -g
 
 
 
@@ -215,7 +237,8 @@ brew install node
 * 初步了解了终端中反馈的内容读法, 知道怎么看反馈信息, 如何可以搜索到对应错误的相关信息
 * 接触到了不少命令行, 虽然还不能熟练应用
 * 最重要的是有些时候竟然享受这样被虐的状态, 囧! 但如果两天内还解不出来兼职要崩溃
-* 是否偏离学习 Python 的巷道? 不尽然, 我觉得应该算是开始接触到真实的程序员工作环境和状态了吧
+* 是否偏离学习 Python的巷道?不尽然,我觉得应该算是开始接触到真实的程序员工作环境和状态了吧
+* 看到了国外的程序员如何在 stackoverflow 和 github 上讨论问题, 解决问题
 
 
 
