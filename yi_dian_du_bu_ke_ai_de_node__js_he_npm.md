@@ -155,8 +155,9 @@ npm -v
 以为终于可以开心的安装 gitbook 了,结果遇到两个坑:
 * npm 被屏蔽
 * 还是需要安装 Xcode
+* sudo 管理权权限安装 gitbook
 
-**第1坑**
+####第1坑
 
 通过 npm 安装 gitbook 
 ```
@@ -196,25 +197,28 @@ npm ERR!     /Users/alex/npm-debug.log
 2. 安装 cnpm, cnpm 是 npm 中国镜像的 npm 客户端
 3. 切换 npm 到中国镜像 cnpm
 
-####方法1
-由于我选择的科学上网方式, 不知道具体的代理网络地址, 所以放弃了第一种方式. 但可以参考这篇
+#####方法1
+由于我选择的科学上网方式, 不知道具体的代理网络地址, 所以放弃了第一种方式. 但可以参考这两篇
+
 [Is there a way to make npm install (the command) to work behind proxy?](http://stackoverflow.com/questions/7559648/is-there-a-way-to-make-npm-install-the-command-to-work-behind-proxy)
 
+[如何给 NPM 设置代理](http://blog.csdn.net/cnbird2008/article/details/8442333)
 
-####方法2
+
+#####方法2
 我采用的这种方式, cnpm 是 npm 中国镜像的 npm 客户端，可以代替 npm。
 先用 npm 安装 cnpm
 ```
 npm install -g cnpm
 ```
 
-####方法3
+#####方法3
 设置国内的镜像为默认镜像源：
 ```
 npm config set registry=http://registry.npm.taobao.org
 ```
 
-第2坑:
+####第2坑:
 
 通过 cnpm 安装gitbook
 
@@ -244,12 +248,121 @@ gitbook -V
 -bash: gitbook: command not found
 ```
 
+####第3坑:
 
-** 一些命令brew **
+原来需要管理员权限(sudo)下安装才行.....
+
+```
+sudo cnpm install gitbook -g
+```
+安装后查看版本号,看是否安装成功,结果提示:需要卸了 gitbook ,先安装 gitbook-cli
+```
+You need to install 'gitbook-cli' to have access to the gitbook command anywhere on your system.
+If you've installed this package globally, you need to uninstall it.
+>> Run 'npm uninstall -g gitbook' then 'npm install -g gitbook-cli'
+```
+按照指示执行卸载 gitbook
+```
+sudo cnpm uninstall gitbook -g
+Password:
+unbuild gitbook@2.4.2
+```
+
+再安装 gitbook-cli
+```
+sudo npm install -g gitbook-cli
+```
+
+终于成功安装了:
+```
+gitbook -V
+0.3.6
+```
+**有2个问题一直想知道,但是没有去深究,:**
+* gitbook-lic 和 gitbook 有什么区别?
+* gitbook -V 和 gitbook versions 查出来的版本号为啥不一样?
+
+**微信中一位同学做了解答:**
+
+> gitbook -V
+
+> 0.3.6
+
+> 输出的是 gitbook-cli（GitBook command line interface）的版本
 
 
 
-Your system is ready to brew.
+> gitbook versions
+
+> 2.4.3
+
+> 输出的是 gitbook-cli 当中已安装的 GitBook 的版本。
+
+
+**还学到一些有用的通用性命令:**
+1. gitbook help  
+
+查看 gitbook 的帮助菜单, 可以查看 gitbook 的一些基本操作
+```
+  build [book] [output] 	 build a book
+    --format 	 Format to build to (Default is website; Values are website, json, ebook)
+    --log 	 Minimum log level to display (Default is info; Values are debug, info, warn, error, disabled)
+
+  pdf [book] [output] 	 build a book to pdf
+    --log 	 Minimum log level to display (Default is info; Values are debug, info, warn, error, disabled)
+
+  epub [book] [output] 	 build a book to epub
+    --log 	 Minimum log level to display (Default is info; Values are debug, info, warn, error, disabled)
+
+  mobi [book] [output] 	 build a book to mobi
+    --log 	 Minimum log level to display (Default is info; Values are debug, info, warn, error, disabled)
+
+  serve [book] 	 Build then serve a gitbook from a directory
+    --port 	 Port for server to listen on (Default is 4000)
+    --lrport 	 Port for livereload server to listen on (Default is 35729)
+    --watch 	 Enable/disable file watcher (Default is true)
+    --format 	 Format to build to (Default is website; Values are website, json, ebook)
+    --log 	 Minimum log level to display (Default is info; Values are debug, info, warn, error, disabled)
+
+  install [book] 	 install plugins dependencies
+
+  init [directory] 	 create files and folders based on contents of SUMMARY.md
+  ```
+
+2. gitbook 
+
+可以查看到 gitbook 相关的配置操作和解释
+
+```
+  Usage: gitbook [options] [command]
+
+
+  Commands:
+
+    versions                          list installed versions
+    versions:print                    print current version to use in the current directory
+    versions:available                list available versions on NPM
+    versions:install [version]        force install a specific version of gitbook
+    versions:link [version] [folder]  link a version to a local folder
+    versions:uninstall [version]      uninstall a specific version of gitbook
+    help                              list commands for a specific version of gitbook
+    *                                 run a command with a specific gitbook version
+
+  Options:
+
+    -h, --help               output usage information
+    -V, --version            output the version number
+    -v, --gitbook [version]  specify GitBook version to use
+    -d, --debug              enable verbose error
+
+```
+这两个命令对npm 和 node 也同样有效.
+
+
+
+
+
+** 一些关于brew操作命令 **
 
 安装 node
 $ brew install node
@@ -265,6 +378,7 @@ brew install node
 参考资料: http://iambigd.blogspot.com/2014/06/npm.html
 
 ###感受
+
 节后回来就开始安装 git , node , npm , gitbook , 玩玩没想到卡在node 和 npm上差不多一周的时间.
 各种不顺利, 不过也有收获
 * 为了解决问题, 逼迫自己阅读了大量的英文文档和解决方案
@@ -277,21 +391,3 @@ brew install node
 
 
 
-中国镜像
-npm install -g cnpm，然后再cnpm install xxx
-https://npm.taobao.org
-
-
-设置代理
-npm config set proxy = https://…com
-npm config set registry=http://registry.npmjs.org
-
-npm 命令
-
-gitbook -V
-0.3.6
-输出的是 gitbook-cli（GitBook command line interface）的版本
-
-gitbook versions
-2.4.3
-输出的是 gitbook-cli 当中已安装的 GitBook 的版本。
