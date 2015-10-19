@@ -8,5 +8,5 @@
    * [Sublime text插件](sublime_textchang_yong_cha_jian_an_zhuang.md)
    * [一点都不可爱的 node.js 和 npm](yi_dian_du_bu_ke_ai_de_node__js_he_npm.md)
    * [笨办法学 Python 笔记](ben_ban_fa_xue_python_bi_ji.md)
-   * 小黄鸭调试法
+   * [小黄鸭调试法](xiao_huang_ya_diao_shi_fa.md)
 
