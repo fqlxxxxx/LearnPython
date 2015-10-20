@@ -67,12 +67,13 @@ from sys import argv
 script, first, second, third = argv
 
 ```
-验证文件是否存在脚本
+验证文件是否存在脚本, 如果存在 True, 不存在false
+
 
 ```
 from os.path improt exists
 
-exists( filename)
+print "Does the output file exist? %r" % exists( filename)
 ```
 
 ###读取脚本
