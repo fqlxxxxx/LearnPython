@@ -55,5 +55,15 @@ y = jerry
 
 print "%s like the girl, %s . % (x, y)
 ```
+###高级脚本
 
-raw_input()   输入,括号内填写输入时的
+raw_input()   输入,括号内填写输入时的提示语
+
+导入并解包变量, 输入方式
+
+```
+from sys import argv 
+
+script, first, second, third = argv
+```
+
