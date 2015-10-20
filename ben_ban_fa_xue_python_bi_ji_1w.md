@@ -93,3 +93,16 @@ filename.write(要写入的内容) 与 open 有写入权限的命令配合
 cat test.txt 显示文档内容
 
 
+###函数
+ 注意冒号,第二行缩进四个
+```
+def text1(x, y):
+    print x, y
+    
+a = 你好
+b = jerry
+text1(a, b)
+
+结果: 你好, jerry
+```
+
