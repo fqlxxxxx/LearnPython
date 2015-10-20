@@ -89,4 +89,7 @@ filename.close() 关闭打开的文件
 
 filename.write(要写入的内容) 与 open 有写入权限的命令配合
 
+###其他脚本
+cat test.txt 显示文档内容
+
 
