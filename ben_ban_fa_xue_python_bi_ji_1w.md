@@ -89,12 +89,14 @@ filename.close() 关闭打开的文件
 
 filename.write(要写入的内容) 与 open 有写入权限的命令配合
 
+filename.seek() 查找
+
 ###其他脚本
 cat test.txt 显示文档内容
 
 
 ###函数
- 注意冒号,第二行缩进四个
+ 注意冒号,第二行缩进四个空格
 ```
 def text1(x, y):
     print x, y
@@ -104,5 +106,20 @@ b = jerry
 text1(a, b)
 
 结果: 你好, jerry
+
+```
+
+return 返回计算数值,和 def 函数联合使用,
+
+
+```
+def add(a, b)
+    print "adding %d + %d" % (a, b)
+    return a + b
+    
+A = add(1, 2)
+
+print A
+结果:3
 ```
 
