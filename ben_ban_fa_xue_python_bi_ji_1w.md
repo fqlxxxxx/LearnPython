@@ -67,6 +67,13 @@ from sys import argv
 script, first, second, third = argv
 
 ```
+验证文件是否存在脚本
+
+```
+from os.path improt exists
+
+exists( filename)
+```
 
 ###读取脚本
 open(filename) 括号中放要读取的文件名
