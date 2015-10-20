@@ -91,6 +91,8 @@ filename.write(要写入的内容) 与 open 有写入权限的命令配合
 
 filename.seek() 查找
 
+rewind(filename)
+
 ###其他脚本
 cat test.txt 显示文档内容
 
@@ -109,7 +111,8 @@ text1(a, b)
 
 ```
 
-return 返回计算数值,和 def 函数联合使用,
+return 返回计算数值,在 def 函数中使用, 
+可以对结果进行引用
 
 
 ```
