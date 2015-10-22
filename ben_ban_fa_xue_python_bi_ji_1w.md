@@ -93,6 +93,10 @@ filename.seek() 查找
 
 rewind(filename)
 
+writeline() 是输出后换行，下次写会在下一行写
+
+write()是输出后光标在行末不会换行，下次写会接着这行写
+
 ###其他脚本
 cat test.txt 显示文档内容
 
