@@ -11,4 +11,5 @@
    * [小黄鸭调试法](xiao_huang_ya_diao_shi_fa.md)
 * [1W](1w.md)
    * [笨办法学 Python笔记1](ben_ban_fa_xue_python_bi_ji_1w.md)
+   * 极简日记本
 
