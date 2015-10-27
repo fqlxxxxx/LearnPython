@@ -79,5 +79,9 @@ MainLabel.pack() #显示元件
 root.mainloop()  #进入窗体的主循环
 
 ```
+以上代码生成的GUI
+
+![](QQ20151027-1@2x.png)
+
 
 
