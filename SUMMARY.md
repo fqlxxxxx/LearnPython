@@ -14,4 +14,5 @@
 * [2W](2w.md)
    * [极简日记本](ji_jian_ri_ji_ben.md)
    * [更新 Anaconda](geng_xin_anaconda.md)
+   * 极简交互式日记的桌面版本
 
