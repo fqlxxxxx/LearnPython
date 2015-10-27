@@ -75,7 +75,7 @@ root=Tkinter.Tk()  #创建主窗体
 MainLabel=Tkinter.Label(root,
                         text="I am so ugly. -- Tkinter",
                         font="Times 16 bold")  #创建元件
-MainLabel.pack()  #显示元件
+MainLabel.pack() #显示元件
 root.mainloop()  #进入窗体的主循环
 
 ```
