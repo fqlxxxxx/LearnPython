@@ -13,5 +13,5 @@
    * [笨办法学 Python笔记1](ben_ban_fa_xue_python_bi_ji_1w.md)
 * [2W](2w.md)
    * [极简日记本](ji_jian_ri_ji_ben.md)
-   * 更新 Anaconda
+   * [更新 Anaconda](geng_xin_anaconda.md)
 
