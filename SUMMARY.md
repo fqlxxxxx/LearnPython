@@ -12,5 +12,5 @@
 * [1W](1w.md)
    * [笨办法学 Python笔记1](ben_ban_fa_xue_python_bi_ji_1w.md)
 * [2W](2w.md)
-   * [更新](update_Anaconda.md)
+   * [更新Anaconda](update_Anaconda.md)
 
