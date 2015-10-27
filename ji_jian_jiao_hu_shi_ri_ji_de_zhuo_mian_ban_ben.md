@@ -62,12 +62,22 @@ Tkinter优点很明显，是一个已经半官方化的工具包，可以直接�
 
 感觉 Tkinter 的语法非常类似css(css 只是简单了解过), 比如定义按钮的宽窄胖瘦/ 文本字体/颜色等等, 高级一些的可能涉及到事件触发以及逻辑判断等等, 感觉相对来说还是比较好理解的.
 
-GUI 的设计主要包括下面三个步骤：
-创建主窗体
-创建元件
-显示元件
-进入窗体的主循环
+举个例子, 设计一个简单的GUI(交互界面)主要包括下面三个步骤：
+- 创建主窗体
+- 创建元件
+- 显示元件
+- 进入窗体的主循环
 
+```
+import Tkinter
 
+root=Tkinter.Tk()  #创建主窗体
+MainLabel=Tkinter.Label(root,
+                        text="I am so ugly. -- Tkinter",
+                        font="Times 16 bold")  #创建元件
+MainLabel.pack()  #显示元件
+root.mainloop()  #进入窗体的主循环
+
+```
 
 
